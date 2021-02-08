@@ -79,7 +79,7 @@ python3 ./manage.py createsuperuser
 # Ask all questions
 ```
 
-Now the database contain with the admin user
+Now the database contain an admin user
 
 ## Running app
 
