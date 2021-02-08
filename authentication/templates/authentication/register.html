@@ -1,0 +1,15 @@
+{% extends 'authentication/layouts/base.html' %}
+
+{% block content %}
+  <h1>Register</h1>
+
+  <form method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Register</button>
+  </form>
+
+  <a href="{% url 'authentication:login' %}">
+    You have account?. Login
+  </a>
+{% endblock %}

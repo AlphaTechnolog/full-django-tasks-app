@@ -1,0 +1,49 @@
+{% extends 'tasks/layouts/base.html' %}
+
+{% block content %}
+  {% if messages %}
+    {% for message in messages %}
+      <div>
+        <p>{{ message.tags }}: {{ message }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <button onclick='window.location = `{% url "tasks:add_task" %}`'>
+    Add task
+  </button>
+
+  <h1>Registered tasks</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Completed</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if tasks %}
+        {% for task in tasks %}
+          <tr>
+            <td>{{ task.name }}</td>
+            <td>{{ task.description }}</td>
+            <td>{% if task.completed %}Yes{% else %}No{% endif %}</td>
+            <td>
+              <a href='{% url "tasks:update_task" task.id %}'>Update task</a>
+              <a href='{% url "tasks:remove_task" task.id %}'>Remove task</a>
+            </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan='4'>
+            Don't have tasks to show
+          </td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

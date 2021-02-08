@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Tasks App - Main</title>
+    <link rel='stylesheet' href='{% static "tasks/main.css" %}'>
+  </head>
+  <body>
+    {% include 'tasks/layouts/navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

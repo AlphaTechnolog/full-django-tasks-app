@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li><a href="{% url 'tasks:dashboard' %}">Dashboard</a></li>
+    <li>
+      <a href="{% url 'authentication:close_session' %}">
+        Hello {{ request.user.username }} - Close session
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,9 @@
+table,
+table thead,
+table thead tr,
+table thead tr th,
+table tbody,
+table tbody tr,
+table tbody tr td {
+    border: solid grey 1px;
+}
